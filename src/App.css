@@ -1,5 +1,20 @@
-.App {
+#joke {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 100px;
+  color:rgb(0, 183, 255);
+  margin-top: 100px;
+ text-transform: uppercase;
+ text-decoration-line: underline;
+}
+
+#generator{
+  color: rgb(235, 0, 0);
+  margin-left: 500px;
+  margin-top: 100px;
+border-bottom: #fb6161; 
+text-transform: uppercase;
+text-decoration-line: underline;
 }
 
 .App-logo {

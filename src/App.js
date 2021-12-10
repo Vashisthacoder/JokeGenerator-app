@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, {useEffect,useState} from 'react'
 import './App.css';
 
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [joke, setJoke] = useState([])
+
+    useEffect(() => {
+
+        const fetchjoke =async()=>
+        await fetch(`https://api.icndb.com/jokes/random`)
+        .then (response=>response.json())
+        .then(data=>{
+
+            console.log(data.value)
+            setJoke(data.value.joke)
+
+
+        })
+
+
+
+        fetchjoke()
+       
+    }, [])
+
+
+    return (
+
+     
+
+        <div>
+
+         <h1 id='generator' >Joke Generator</h1>
+
+       <h1 id="joke">{joke}</h1 >
+     
+            
+        </div>
+    )
 }
 
-export default App;
+export default App
+
